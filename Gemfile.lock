@@ -35,6 +35,7 @@ GEM
     eventmachine (1.2.0.1)
     every_day_irb (2.0.0)
       cd (~> 1.0)
+    excon (0.51.0)
     faker (1.6.6)
       i18n (~> 0.5)
     fancy_irb (1.0.2)
@@ -47,6 +48,8 @@ GEM
     hirb (0.7.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     instance (0.2.0)
     interactive_editor (0.0.10)
@@ -147,6 +150,8 @@ GEM
     slop (3.6.0)
     spoon (0.0.4)
       ffi
+    spotify-client (0.0.10)
+      excon (~> 0.37)
     thin (1.7.0)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -170,6 +175,7 @@ DEPENDENCIES
   activesupport (~> 4.1)
   dotenv
   faker
+  httparty
   irbtools
   pg
   pry
@@ -179,6 +185,7 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-contrib
+  spotify-client
   thin
 
 BUNDLED WITH

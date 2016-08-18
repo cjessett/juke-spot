@@ -18,6 +18,9 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'rspotify'
+gem 'spotify-client'
+gem 'httparty'
+
 gem 'pry'
 gem 'dotenv'
 gem 'irbtools', require: 'irbtools/binding'
