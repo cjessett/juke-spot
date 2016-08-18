@@ -19,6 +19,8 @@ gem 'shotgun'
 
 gem 'rspotify'
 gem 'pry'
+gem 'dotenv'
+gem 'irbtools', require: 'irbtools/binding'
 
 group :test do
   gem 'faker'
