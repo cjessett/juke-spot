@@ -7,7 +7,12 @@ end
 %w(get post).each do |method|
   send(method, "/auth/:provider/callback") do
     # env['omniauth.auth'] # => OmniAuth::AuthHash
-    @spotify_user = RSpotify::User.new env['omniauth.auth']
-    redirect '/'
+    session[params[:provider]] = env['omniauth.auth']
+    erb :index
   end
+end
+
+get '/new_playlist' do
+  current_user.create_playlist!('juke-spot-new' + Time.now.strftime("%D-%H:%M"))
+  redirect '/'
 end

@@ -4,8 +4,12 @@
 
   <a href="/auth/spotify">authorize</a>
 
+  <p>
   <% if current_user %>
-    <%= current_user.inspect %>
+    <%= current_user.email %>
   <% end %>
+  </p>
+
+  <a href="/new_playlist">Create a Playlist</a>
 
 </div>
