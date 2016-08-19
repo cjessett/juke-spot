@@ -8,7 +8,7 @@ end
   send(method, "/auth/:provider/callback") do
     # env['omniauth.auth'] # => OmniAuth::AuthHash
     session[params[:provider]] = env['omniauth.auth']
-    erb :index
+    redirect '/'
   end
 end
 
