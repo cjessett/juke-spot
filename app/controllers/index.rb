@@ -1,5 +1,6 @@
 get '/' do
   # Look in app/views/index.erb
+  binding.pry
   erb :index
 end
 
