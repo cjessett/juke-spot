@@ -2,10 +2,10 @@
   <h1>Welcome to Sinatra!</h1>
   <p>Hello, world!</p>
 
-  <a href="/auth">authorize</a>
+  <a href="/auth/spotify">authorize</a>
 
-  <% if @params %>
-    <%= @params.inspect %>
+  <% if current_user %>
+    <%= current_user.inspect %>
   <% end %>
 
 </div>

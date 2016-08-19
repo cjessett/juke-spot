@@ -21,6 +21,9 @@ gem 'rspotify'
 gem 'spotify-client'
 gem 'httparty'
 
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'omniauth-spotify'
+
 gem 'pry'
 gem 'dotenv'
 gem 'irbtools', require: 'irbtools/binding'
