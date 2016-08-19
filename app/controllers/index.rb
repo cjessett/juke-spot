@@ -4,10 +4,12 @@ get '/' do
 end
 
 get '/auth' do
-  redirect auth_request
+   redirect auth_request
 end
 
 get '/callback' do
-  p params.inspect
+  response = request_token(params[:code])
+  binding.pry
+  session[:user_token] = response["access_token"]
   erb :index
 end
