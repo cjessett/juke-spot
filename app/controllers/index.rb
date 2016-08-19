@@ -16,3 +16,8 @@ get '/new_playlist' do
   current_user.create_playlist!('juke-spot-new' + Time.now.strftime("%D-%H:%M"))
   redirect '/'
 end
+
+get '/logout' do
+  session.clear
+  redirect '/'
+end
