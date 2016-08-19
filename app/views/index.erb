@@ -2,14 +2,16 @@
   <h1>Welcome to Sinatra!</h1>
   <p>Hello, world!</p>
 
-  <a href="/auth/spotify">authorize</a>
+  <% if !current_user %>
+    <a href="/auth/spotify" class="positive ui button">authorize</a>
+  <% end %>
+
 
   <p>
   <% if current_user %>
-    <%= current_user.email %>
+    <%= current_user.email %><br>
+    <button class="positive ui button">Start a Party</button>
   <% end %>
   </p>
-
-  <a href="/new_playlist">Create a Playlist</a>
 
 </div>
