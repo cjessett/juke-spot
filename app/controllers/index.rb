@@ -1,21 +1,20 @@
 get '/' do
   # Look in app/views/index.erb
-  binding.pry
   erb :index
 end
 
 # Support both GET and POST for callbacks
 %w(get post).each do |method|
   send(method, "/auth/:provider/callback") do
-    # env['omniauth.auth'] # => OmniAuth::AuthHash
     session[params[:provider]] = env['omniauth.auth']
+    Host.find_or_create_by(spotify_id: current_user.id)
     redirect '/'
   end
 end
 
-get '/new_playlist' do
-  current_user.create_playlist!('juke-spot-new' + Time.now.strftime("%D-%H:%M"))
-  redirect '/'
+post '/playlists/new' do
+  current_user.create_playlist!(params[:playlist_name])
+  redirect request.referrer
 end
 
 get '/logout' do

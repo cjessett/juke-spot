@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <form action="/playlists/new" method="post">
+      <input type="text" name="playlist_name">
+      <input type="submit" value="Create Playlist" class="positive ui button">
+    </form>
+  </div>
+
+  <!-- playlists -->
+  <section>
+    <ul>
+      <% current_user.playlists.each do |list| %>
+        <li><%= list.name %></li>
+      <% end %>
+    </ul>
+  </section>
+</div>
